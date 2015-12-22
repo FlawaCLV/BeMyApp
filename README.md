@@ -1,2 +1,2 @@
 # ByMyApp
-Gestionnaire d'événement
+Gestionnaire d'événements

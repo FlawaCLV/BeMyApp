@@ -1,0 +1,27 @@
+{
+  "name": "bemyapp",
+  "description": "BeMyApp",
+  "version": "0.1.0",
+  "author": {
+    "name": "Hugo Pozzoli",
+    "email": "me@hugopozzoli.com"
+  },
+  "contributors": [
+    {
+      "name": "Hugo Pozzoli",
+      "email": "me@hugopozzoli.com"
+    }
+  ],
+  "license": "none",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "keywords": [
+    "BeMyApp",
+    "Gestionnaore d'événements"
+  ]
+}
