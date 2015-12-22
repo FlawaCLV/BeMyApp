@@ -55,14 +55,16 @@ module.exports = function (grunt) {
                 // the files to concatenate
                 src: [
                     'bower_components/jquery/dist/jquery.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/angular/angular.js',
+                    'bower_components/angular-ui-router/release/angular-ui-router.js',
                     'bower_components/ng-file-upload/ng-file-upload-all.js',
                     'js/main.js',
-                    'js/bemyapp/main.js',
-                    'js/bemyapp/directives/**/*.js',
-                    'js/bemyapp/filters/**/*.js',
-                    'js/bemyapp/services/**/*.js',
-                    'js/bemyapp/controllers/**/*.js'
+                    'js/main.js',
+                    'js/directives/**/*.js',
+                    'js/filters/**/*.js',
+                    'js/services/**/*.js',
+                    'js/controllers/**/*.js'
                 ],
                 // the location of the resulting JS file
                 dest: 'dist/main.min.js'
