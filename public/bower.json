@@ -10,11 +10,14 @@
     "tests"
   ],
   "dependencies": {
+    "moment": "~2.10.6",
     "jquery": "~2.1.4",
     "font-awesome": "~4.5.0",
+    "snackbarjs": "~1.0.0",
     "angular": "~1.4.7",
     "angular-ui-router": "~0.2.15",
     "ng-file-upload": "~10.0.2",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37"
   }
 }

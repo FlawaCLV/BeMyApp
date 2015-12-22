@@ -54,8 +54,11 @@ module.exports = function (grunt) {
             dist: {
                 // the files to concatenate
                 src: [
+                    'bower_components/moment/min/moment-with-locales.js',
                     'bower_components/jquery/dist/jquery.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
+                    'bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js',
+                    'bower_components/snackbarjs/src/snackbar.js',
                     'bower_components/angular/angular.js',
                     'bower_components/angular-ui-router/release/angular-ui-router.js',
                     'bower_components/ng-file-upload/ng-file-upload-all.js',

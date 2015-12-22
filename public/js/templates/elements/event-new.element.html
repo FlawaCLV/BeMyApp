@@ -15,11 +15,15 @@
                     <textarea class="form-control" id="form--description" placeholder="Description" ng-model="event.description"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="form--date">Date</label>
-                    <input type="text" class="form-control" id="form--date" placeholder="Date de l'événement" ng-model="event.date">
+                    <div class='input-group date' id='datetimepicker1' datepicker>
+                        <input type='text' class="form-control" ng-model="event.date" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="form--date">Logo</label>
+                    <label for="form--logo">Logo</label>
                     <input type="text" class="form-control" id="form--logo" placeholder="Logo" ng-model="event.logo">
                 </div>
             </div>
