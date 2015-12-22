@@ -1,6 +1,7 @@
 # BeMyApp
 Gestionnaire d'événements
 
+In /
 `$ npm install`
 
 In /public
