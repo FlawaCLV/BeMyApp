@@ -3,7 +3,7 @@
  */
 
 var mongoose    = require('mongoose'),
-    EventSchema = require('./Entities/Event');
+    Event       = require('./Entities/Event').Event;
 
 
 var routing =  {
@@ -25,8 +25,6 @@ var routing =  {
         // [GET] Event
 
         app.get('/events', function(req, res) {
-            var Event = mongoose.model('Event', EventSchema);
-
             Event.find(function (err, events) {
                 if (err) return res.send(false);
                 res.send(events);
@@ -38,8 +36,7 @@ var routing =  {
         // [POST] Event
 
         app.post('/event', function(req, res) {
-            var Event = mongoose.model('Event', EventSchema),
-                event = new Event({
+            var event = new Event({
                     title: req.body.title,
                     description: req.body.description,
                     date: req.body.date,
@@ -56,8 +53,6 @@ var routing =  {
         // [PUT] Event
 
         app.put('/event', function(req, res) {
-            var Event = mongoose.model('Event', EventSchema);
-
             Event.find({
                 title: req.body.title
             }, function(err, event) {

@@ -12,4 +12,4 @@ var EventSchema = new Schema({
     logo: String
 });
 
-exports.EventSchema = EventSchema;
+exports.Event = mongoose.model('Event', EventSchema);

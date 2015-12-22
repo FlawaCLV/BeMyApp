@@ -1,1 +1,4 @@
-<h1>Layout</h1>
+<h1>Gestionnaire d'événements</h1>
+<div class="btn btn-primary" ng-click="$root.$broadcast('Event:New');">Ajouter un événement</div>
+<h2>Liste des événements</h2>
+<div ng-include="'/public/js/templates/elements/event-new.element.html'"></div>
