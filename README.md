@@ -1,2 +1,2 @@
-# ByMyApp
+# BeMyApp
 Gestionnaire d'événements

@@ -14,7 +14,10 @@
   ],
   "license": "none",
   "dependencies": {
-    "express": "^4.13.3"
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "mongoose": "^4.3.3",
+    "swig": "^1.4.2"
   },
   "devDependencies": {},
   "engines": {
