@@ -5,11 +5,11 @@
 var mongoose    = require('mongoose'),
     Schema      = mongoose.Schema;
 
-var EventSchema = new Schema({
+var Event = mongoose.model('Event', new Schema({
     title: String,
     description: String,
     date: Date,
     logo: String
-});
+}));
 
-exports.Event = mongoose.model('Event', EventSchema);
+exports.Event = Event;

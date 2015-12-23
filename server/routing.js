@@ -27,9 +27,9 @@ var routing =  {
         app.get('/events', function(req, res) {
             Event.find(function (err, events) {
                 if (err) return res.send(false);
+
                 res.send(events);
             });
-
         });
 
 
@@ -45,6 +45,7 @@ var routing =  {
 
             event.save(function (err, event) {
                 if (err) return res.send(false);
+
                 res.send(event);
             });
         });
@@ -53,11 +54,21 @@ var routing =  {
         // [PUT] Event
 
         app.put('/event', function(req, res) {
-            Event.find({
-                title: req.body.title
-            }, function(err, event) {
+            Event.update({ _id: req.body._id }, req.body, {upsert: true}, function(err) {
                 if (err) return res.send(false);
-                res.send(event);
+
+                res.send(req.body);
+            });
+        });
+
+
+        // [DELETE] Event
+
+        app.delete('/event', function(req, res) {
+            Event.remove({ _id: req.query.id }, function(err, removed) {
+                if (err) return res.send(false);
+
+                res.send(removed);
             });
         });
 

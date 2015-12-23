@@ -1,4 +1,12 @@
 <h1>Gestionnaire d'événements</h1>
-<div class="btn btn-primary" ng-click="$root.$broadcast('Event:New');">Ajouter un événement</div>
+<div class="btn btn-primary" ng-click="$root.$broadcast('Event:Edit');">Ajouter un événement</div>
 <h2>Liste des événements</h2>
-<div ng-include="'/public/js/templates/elements/event-new.element.html'"></div>
+<div ng-repeat="event in events" events>
+    <div>{{ event.title }}</div>
+    <div>{{ event.description }}</div>
+    <div>{{ event.date }}</div>
+    <div>{{ event.logo }}</div>
+    <div class="btn btn-default" ng-click="$root.$broadcast('Event:Edit', event);">Edit</div>
+    <div class="btn btn-danger" ng-click="$root.$broadcast('Event:Edit:Delete', event);">Remove</div>
+</div>
+<div ng-include="'/public/js/templates/elements/event-edit.element.html'"></div>

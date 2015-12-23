@@ -13,5 +13,13 @@ BeMyApp.service('$EventService', ['$http',
             return $http.post('/event', Event);
         };
 
+        this.put = function(Event) {
+            return $http.put('/event', Event);
+        };
+
+        this.delete = function(Event) {
+            return $http.delete('/event?id='+Event._id);
+        };
+
     }
 ]);

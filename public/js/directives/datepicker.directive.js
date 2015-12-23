@@ -10,7 +10,7 @@ BeMyApp.directive('datepicker', ['$timeout',
                 $timeout(function() {
                     angular.element(element).datetimepicker({
                         defaultDate: moment(),
-                        format: 'DD/MM/YYYY'
+                        format: 'DD/MM/YYYY HH:mm'
                     });
                 });
 
