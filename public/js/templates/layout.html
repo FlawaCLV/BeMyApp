@@ -1,12 +1,34 @@
-<h1>Gestionnaire d'événements</h1>
-<div class="btn btn-primary" ng-click="$root.$broadcast('Event:Edit');">Ajouter un événement</div>
-<h2>Liste des événements</h2>
-<div ng-repeat="event in events" events>
-    <div>{{ event.title }}</div>
-    <div>{{ event.description }}</div>
-    <div>{{ event.date }}</div>
-    <div>{{ event.logo }}</div>
-    <div class="btn btn-default" ng-click="$root.$broadcast('Event:Edit', event);">Edit</div>
-    <div class="btn btn-danger" ng-click="$root.$broadcast('Event:Edit:Delete', event);">Remove</div>
+
+<!--Cover-->
+<div id="cover">
+    <div id="btn--create-event" class="btn btn-primary btn-secondary" ng-click="$root.$broadcast('Event:Edit');">
+        <i class="fa fa-calendar"></i>
+        <span>Créer un événement</span>
+    </div>
 </div>
+<!--END Cover-->
+
+<!--Events-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-12" events>
+            <h2>Tous les événements</h2>
+            <div class="event" ng-repeat="event in events" ng-class="{'event--full':event.full}" ng-click="event.full = !event.full;" event>
+                <div class="event--preview">
+                    <i class="fa fa-calendar ib"></i>
+                    <div class="event--preview--date ib">{{ event.date|date:'dd/MM' }}</div>
+                    <div class="event--preview--title ib">{{ event.title }}</div>
+                    <div class="event--update text-center" ng-click="$root.$broadcast('Event:Edit', $event, event);"><i class="fa fa-pencil"></i></div>
+                </div>
+                <div class="event--content">
+                    <div class="event--logo ib" style="background-image:url({{ event.logo }});"></div>
+                    <div class="event--description ib">{{ event.description }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END Events-->
+
+<!--Create Event modal-->
 <div ng-include="'/public/js/templates/elements/event-edit.element.html'"></div>

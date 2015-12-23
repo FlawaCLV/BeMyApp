@@ -31,7 +31,10 @@ BeMyApp.directive('eventEdit', ['$rootScope', '$EventService',
 
                 // Trigger new event module
 
-                $scope.$on('Event:Edit', function(e, Event) {
+                $scope.$on('Event:Edit', function(e, evt, Event) {
+                    evt.stopPropagation();
+                    evt.preventDefault();
+
                     $scope.initVars(Event);
 
                     $modal.modal('show');

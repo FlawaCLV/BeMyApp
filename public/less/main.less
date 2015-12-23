@@ -12,13 +12,72 @@
 // Config
 
 @import "config/colorscheme.config.less";
+@import "config/mixins.config.less";
 
 
 // Elements
 @import "elements/snackbar.element.less";
+@import "elements/btn.element.less";
+@import "elements/event.element.less";
 
 body {
+  padding-bottom: 120px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  .ib {
+    display: inline-block;
+    vertical-align: top;
+  }
+
   #nprogress .bar {
     z-index: 9999;
+  }
+
+  #cover {
+    position: relative;
+    height: 300px;
+    background: url('../images/cover.png') center no-repeat;
+    background-size: cover;
+
+    #btn--create-event {
+      position: absolute;
+      z-index: 100;
+      top: ~"calc(100% - 30px)";
+      left: ~"calc(50% - 150px)";
+      width: 300px;
+      height: 60px;
+      line-height: 60px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      .box-shadow();
+      .transition(all .5s ease);
+
+      &:hover {
+        .box-shadow--lg();
+      }
+      &:active {
+        .box-shadow--xs();
+      }
+
+      > i {
+        position: absolute;
+        left: ~"calc(50% - 15px)";
+        bottom: ~"calc(100% + 20px)";
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        text-shadow: 0 0 2px @black;
+      }
+    }
+  }
+
+  h2 {
+    margin: 120px 0 20px 0;
+    padding: 0;
+    .font(18px, 600, @grey4);
+    text-transform: uppercase;
   }
 }

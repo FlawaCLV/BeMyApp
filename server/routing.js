@@ -13,7 +13,7 @@ var Routing =  {
         // Angular APP
 
         app.get('/', function (req, res) {
-            res.render('layout', {});
+            res.render('index', {});
         });
 
 

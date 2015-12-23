@@ -1,0 +1,95 @@
+
+.font(@size, @weight, @color: inherit) {
+  font-size: @size;
+  line-height: @size;
+  font-weight: @weight;
+  color: @color;
+}
+
+.background(@position, @repeat, @size) {
+  background-position: @position;
+  background-repeat: @repeat;
+  background-size: @size;
+}
+
+.box-shadow() {
+  box-shadow: 0 1px 6px rgba(0,0,0,.12), 0 1px 6px rgba(0,0,0,.12);
+}
+.box-shadow--xs() {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.box-shadow--lg() {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.text-ellipsis() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.placeholder(@color: @grey10) {
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: @color;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: @color;
+    opacity: 1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: @color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: @color;
+  }
+}
+
+.transition(@trans) {
+  -webkit-transition: @trans;
+  -moz-transition: @trans;
+  -o-transition: @trans;
+  transition: @trans;
+}
+
+.transition2(@trans, @trans2) {
+  -webkit-transition: @trans, @trans2;
+  -moz-transition: @trans, @trans2;
+  -o-transition: @trans, @trans2;
+  transition: @trans, @trans2;
+}
+
+.transition3(@trans, @trans2, @trans3) {
+  -webkit-transition: @trans, @trans2, @trans3;
+  -moz-transition: @trans, @trans2, @trans3;
+  -o-transition: @trans, @trans2, @trans3;
+  transition: @trans, @trans2, @trans3;
+}
+
+.transform(@trans) {
+  -webkit-transform: @trans;
+  -moz-transform: @trans;
+  -o-transform: @trans;
+  transform: @trans;
+}
+
+.animation(@anim) {
+  -webkit-animation: @anim;
+  -moz-animation: @anim;
+  -o-animation: @anim;
+  animation: @anim;
+}
+
+.animation2(@anim, @anim2) {
+  -webkit-animation: @anim, @anim2;
+  -moz-animation: @anim, @anim2;
+  -o-animation: @anim, @anim2;
+  animation: @anim, @anim2;
+}
+
+.animation3(@anim, @anim2, @anim3) {
+  -webkit-animation: @anim, @anim3;
+  -moz-animation: @anim, @anim2, @anim3;
+  -o-animation: @anim, @anim2, @anim3;
+  animation: @anim, @anim2, @anim3;
+}
