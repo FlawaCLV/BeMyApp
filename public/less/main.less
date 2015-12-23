@@ -16,6 +16,7 @@
 
 
 // Elements
+@import "elements/progress.element.less";
 @import "elements/snackbar.element.less";
 @import "elements/btn.element.less";
 @import "elements/modal.element.less";
@@ -27,13 +28,13 @@ body {
   font-size: 14px;
   font-weight: 400;
 
+  * {
+    outline: none;
+    box-sizing: border-box;
+  }
   .ib {
     display: inline-block;
     vertical-align: top;
-  }
-
-  #nprogress .bar {
-    z-index: 9999;
   }
 
   #cover {
@@ -75,10 +76,41 @@ body {
     }
   }
 
-  h2 {
+  #top {
+    position: relative;
     margin: 120px 0 20px 0;
-    padding: 0;
-    .font(18px, 600, @grey4);
-    text-transform: uppercase;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      .font(18px, 600, @grey4);
+      line-height: 30px;
+      text-transform: uppercase;
+    }
+    #search {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      > i {
+        position: absolute;
+        margin: 5px;
+        font-size: 20px;
+        color: @grey4;
+      }
+      input {
+        padding: 0 0 0 30px;
+        width: 200px;
+        height: 30px;
+        .font(14px, 400, @black);
+        line-height: 30px;
+        border: none;
+        border-bottom: 1px solid @grey4;
+
+        &:focus {
+          border-bottom-color: @black;
+        }
+      }
+    }
   }
 }

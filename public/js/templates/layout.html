@@ -12,14 +12,20 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 col-sm-12" events>
-            <h2>Tous les événements</h2>
-            <div class="event" ng-repeat="event in events" ng-class="{'event--full':event.full}" ng-click="event.full = !event.full;" event>
+            <div id="top">
+                <h2>Tous les événements</h2>
+                <div id="search">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Rechercher..." ng-model="search">
+                </div>
+            </div>
+            <div class="event" ng-repeat="event in events | orderBy:'date' | filter:search" ng-class="{'event--full':event.full}" ng-click="event.full = !event.full;" event>
                 <div class="event--preview">
                     <i class="fa fa-calendar ib"></i>
                     <div class="event--preview--date ib">{{ event.date|date:'dd/MM' }}</div>
                     <div class="event--preview--title ib">{{ event.title }}</div>
                     <div class="event--update text-center" ng-click="$root.$broadcast('Event:Edit', $event, event);"><i class="fa fa-pencil"></i></div>
-                    <div class="event--delete text-center" ng-click="$root.$broadcast('Event:Delete', $event, event);"><i class="fa fa-remove"></i></div>
+                    <div class="event--delete text-center" ng-click="$root.$broadcast('Event:Delete', $event, event);"><i class="fa fa-trash-o"></i></div>
                 </div>
                 <div class="event--content">
                     <div class="event--logo ib" style="background-image:url({{ event.logo }});"></div>
