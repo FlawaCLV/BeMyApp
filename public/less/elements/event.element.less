@@ -27,7 +27,8 @@
       .event--preview--title {
         color: @white;
       }
-      .event--update {
+      .event--update,
+      .event--delete {
         display: inline-block;
         opacity: 1;
       }
@@ -50,7 +51,8 @@
       .font(16px, 600, @black);
       line-height: 30px;
     }
-    .event--update {
+    .event--update,
+    .event--delete {
       position: absolute;
       top: 20px;
       right: 20px;
@@ -63,6 +65,10 @@
       background-color: @white;
       opacity: 0;
       .transition(opacity .5s ease);
+
+      &.event--update {
+        right: 60px;
+      }
     }
   }
   .event--content {

@@ -19,6 +19,7 @@
                     <div class="event--preview--date ib">{{ event.date|date:'dd/MM' }}</div>
                     <div class="event--preview--title ib">{{ event.title }}</div>
                     <div class="event--update text-center" ng-click="$root.$broadcast('Event:Edit', $event, event);"><i class="fa fa-pencil"></i></div>
+                    <div class="event--delete text-center" ng-click="$root.$broadcast('Event:Delete', $event, event);"><i class="fa fa-remove"></i></div>
                 </div>
                 <div class="event--content">
                     <div class="event--logo ib" style="background-image:url({{ event.logo }});"></div>
@@ -32,3 +33,6 @@
 
 <!--Create Event modal-->
 <div ng-include="'/public/js/templates/elements/event-edit.element.html'"></div>
+
+<!--Delete Event modal-->
+<div ng-include="'/public/js/templates/elements/event-delete.element.html'"></div>

@@ -102,20 +102,6 @@ BeMyApp.directive('eventEdit', ['$rootScope', '$EventService',
                     }
                 };
 
-
-                // Remove event
-
-                $scope.$on('Event:Edit:Delete', function(e, Event) {
-                    if (confirm("Êtes vous sûr de vouloir supprimer cet événement ?")) {
-                        $EventService.delete(Event).success(function(deleted) {
-                            if (deleted) {
-                                $rootScope.$broadcast('Event:Deleted', Event);
-                                $.snackbar({content:"Votre événement a été supprimé !", timeout:5000});
-                            } else $.snackbar({content:"An error occured. Please try again later.", timeout:5000});
-                        });
-                    }
-                });
-
             }
         }
     }
