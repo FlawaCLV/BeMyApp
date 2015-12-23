@@ -6,7 +6,7 @@ var mongoose    = require('mongoose'),
     Event       = require('./Entities/Event').Event;
 
 
-var routing =  {
+var Routing =  {
     start: function(app) {
 
 
@@ -75,4 +75,4 @@ var routing =  {
     }
 };
 
-exports.routing = routing;
+exports.routing = Routing;

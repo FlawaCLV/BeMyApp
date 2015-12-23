@@ -3,15 +3,14 @@
  */
 
 var express     = require('express'),
+    app         = express(),
+    server      = require('http').Server(app),
+    io          = require('socket.io')(server),
     bodyParser  = require('body-parser'),
     mongoose    = require('mongoose'),
     routing     = require('./routing').routing,
+    live        = require('./live').live,
     swig        = require('swig');
-
-
-// App
-
-var app = express();
 
 
 // Initialization
@@ -38,8 +37,15 @@ mongoose.connect('mongodb://localhost/bemyapp');
 routing.start(app);
 
 
+// Live
+
+io.on('connection', function (socket) {
+    live.listen(io, socket);
+});
+
+
 // Server listen
 
-var server = app.listen(3000, function () {
+server.listen(3000, function () {
     console.log('Listening on port 3000');
 });

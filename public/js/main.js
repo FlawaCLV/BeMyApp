@@ -2,8 +2,11 @@
  * Created by hugopozzoli on 22/12/15.
  */
 
+var socket = {on: function() {}};
+
 var BeMyApp = angular.module('BeMyApp', [
-    'ui.router'
+    'ui.router',
+    'ngFileUpload'
 ]);
 
 BeMyApp.config(['$stateProvider', '$urlRouterProvider',
@@ -42,6 +45,12 @@ BeMyApp.run([
     function() {
 
         console.info('Angular APP is running');
+
+        socket = io.connect();
+
+        socket.on('connect', function() {
+            console.info('Socket is connected');
+        });
 
     }
 ]);

@@ -6,6 +6,7 @@
 @import "../bower_components/bootstrap/dist/css/bootstrap.css";
 @import "../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css";
 @import "../bower_components/snackbarjs/dist/snackbar.min.css";
+@import "../bower_components/nprogress/nprogress.css";
 
 
 // Config
@@ -17,5 +18,7 @@
 @import "elements/snackbar.element.less";
 
 body {
-
+  #nprogress .bar {
+    z-index: 9999;
+  }
 }

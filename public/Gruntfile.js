@@ -62,6 +62,8 @@ module.exports = function (grunt) {
                     'bower_components/angular/angular.js',
                     'bower_components/angular-ui-router/release/angular-ui-router.js',
                     'bower_components/ng-file-upload/ng-file-upload-all.js',
+                    'bower_components/nprogress/nprogress.js',
+                    'js/libs/socket.io-stream.js',
                     'js/main.js',
                     'js/main.js',
                     'js/directives/**/*.js',
